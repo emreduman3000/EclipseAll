@@ -1,0 +1,21 @@
+package codes;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class studentAnswersTest {
+
+	@Test
+	void Test_randomAnswers() 
+	{
+		studentAnswers junit= new studentAnswers();
+		int result=junit.
+	}
+
+	@Test
+	void Test_createAnswerKey()
+	{
+		
+	}
+}

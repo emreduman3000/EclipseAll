@@ -1,0 +1,182 @@
+package techproedturkish01.techproedturkish01api;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import static org.junit.Assert.assertEquals;
+import static io.restassured.RestAssured.given;
+import org.testng.asserts.SoftAssert;
+import io.restassured.path.json.JsonPath;
+
+public class GetRequest02 extends TestBase
+{
+	
+	
+	/*When I send a GET request to REST API URL
+		https://restful-booker.herokuapp.com/booking/5
+	    Then HTTP Status Code should be 200
+	    And response content type is “application/JSON”
+	    And response body should be like;
+	    {
+		    “firstname”: “Sally”,
+		    “lastname”: “Ericsson”,
+		    “totalprice”: 111,
+		    “depositpaid”: false,
+		    “bookingdates”: {
+		        “checkin”: “2017-05-23",
+		        “checkout”: “2019-07-02"
+		     }
+		     */
+	// TestBase class olusturup her testte kullanilan datalariTestBase classa koyup tekrar tekrar ayni seyleri
+	//yazmaktan kurtulacagiz.
+	
+	@Test
+	public void get01() 
+	{
+		Response response = given().
+				spec(spec01).
+				when().
+				get("/booking/1");
+		response.prettyPrint();
+		response.
+		then().
+		assertThat().
+		statusCode(200).
+		contentType(ContentType.JSON).
+		body("firstname",equalTo("Susan"),
+				"lastname",equalTo("Smith"),
+				"totalprice",equalTo(719),
+				"depositpaid",equalTo(false),
+				"bookingdates.checkin",equalTo("2016-02-29"),
+				"bookingdates.checkout",equalTo("2019-10-08"),
+				"additionalneeds", equalTo("Breakfast"));
+
+	}
+	
+	
+	
+	//Among the data there are someones whose first name is “Susan”
+	
+	@Test
+	public void get02() 
+	{
+		Response response = given().
+				spec(spec01).
+				
+				get("booking?fistname=Susan");
+		response.prettyPrint();
+//		 response.
+//        then().
+//        assertThat().
+//        statusCode(200).
+//		body("firstname", Matchers.equalTo("Susan"));
+		 assertTrue(response.getBody().asString().contains("bookingid"));
+	}
+	
+	
+	@Test
+	public void get03() 
+	{
+		spec01.queryParam("firtsname", "Susan");
+		spec01.queryParam("depositpaid", true);
+		Response response = given().
+				spec(spec01).
+				get("booking");
+		response.prettyPrint();
+		 assertTrue(response.getBody().asString().contains("bookingid"));
+			}
+	
+	
+	@Test
+	public void get04()
+	{
+		spec01.queryParams("firtsname", "Susan",
+				"depositpaid", true);
+		
+		Response response = given().
+				spec(spec01).
+				get("booking");
+		response.prettyPrint();
+		 assertTrue(response.getBody().asString().contains("bookingid"));
+	}
+
+
+	
+	/*
+	 *  When I send a GET request to REST API URL
+	 * https://restful-booker.herokuapp.com/booking/5
+	 * Then HTTP Status Code should be 200
+	 * And response content type is “application/JSON”
+	 * And response body should be like;
+	 * {“firstname”: “Sally”, “lastname”: “Ericsson”, “totalprice”: 111,
+	 * “depositpaid”: false,
+	 *  “bookingdates”: { 
+	 *  				“checkin”: “2017-05-23",
+	 *  				 “checkout”:“2019-07-02" 
+	 *  					
+ *  					}
+	 */
+	@Test
+	public void get05()
+	{
+		spec01.pathParam("bookingid", 5);//instead of	//get("/booking/5");
+
+		Response response = given().
+				spec(spec01).
+				when().
+				get("/booking/{bookingid}");
+		response.prettyPrint();
+		
+		
+		
+		
+	}
+	
+	@Test
+	public void get06()
+	{
+
+		//assertion hard assertion demektir
+		//verify soft assertion demektir
+		 Response response = given().
+                 spec(spec02).
+               when().
+                 get();
+response.prettyPrint();
+
+//JsonPath objesi olusturun
+JsonPath json = response.jsonPath();
+
+//Tum employee isimlerini console'a yazdiriniz
+System.out.println(json.getList("data.employee_name"));
+
+//Ikinci iscinin(index 1) isminin 'Garret Winters' oldugunu "verify"(soft assertion) ediniz
+//data bir list oldugundan istenen elemana index ile ulasiriz
+
+//Hard Assertion ile yaptik halbuki soruda "verify" diyor. Bu yuzden soft assertion kullanmaliyiz
+assertEquals("Isim istenen gibi degil", "Garrett Winters", json.getString("data[1].employee_name"));
+
+/*
+Soft Assertion icin 3 adim takip edilmelidir: 1) SoftAssert class'indan bir obje (softAssert) olustur
+                                          2) Objeyi (softAssert) kullanarak assertion yap
+                                          3) softAssert.assertAll();
+*/
+SoftAssert softAssert = new SoftAssert();
+softAssert.assertEquals(json.getString("data[1].employee_name"),"Garrett Winters", "Isim istenen gibi degil");
+softAssert.assertAll();
+
+//Iscilerin arasinda Herrod Chandler'in var oldugunu "verify" ediniz.
+
+
+		
+	}
+	
+	
+	
+}
+
+

@@ -1,0 +1,33 @@
+package first;
+
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//INFOs
+		
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+	
+        System.out.println("W3Adda - Java Ternary Operator.");
+        String result =new String(  (10 < 15) ? "Greater" : "Smaller "     );
+        String result2=("emre"=="emre") ? "same" : "different" ;
+        System.out.println("result:"+result + "  result2:"+result2);
+		
+		
+		
+	
+
+		
+		
+	
+	        
+    }
+
+}
+	
+
+

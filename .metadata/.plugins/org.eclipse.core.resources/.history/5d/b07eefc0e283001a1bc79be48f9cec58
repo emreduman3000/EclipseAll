@@ -1,0 +1,37 @@
+package first;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		//day1
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+		
+		System.out.println("EMRE ");
+		System.out.println();
+		char c='!'; int cc='!';
+	
+		System.out.println(c+"\n"+cc);
+		
+		
+		
+		//day2
+		
+		//WRAPPER CLASSES AND THEIR METHODS 
+		System.out.println("Min:"+Integer.MIN_VALUE+"  Max:"+Integer.MAX_VALUE);
+		System.out.println("Size:"+Long.SIZE+"  Bytes:"+Long.BYTES);
+		
+		short x=-3,y=4,z=8; 
+		System.out.println("valueOf:"+Short.valueOf(x)+ "  compare"+ Short.compare(x, y));
+	    System.out.println( Short.valueOf(z).compareTo(Short.valueOf(y)));
+	    
+
+		System.out.println("Size:"+Short.MIN_VALUE+"  Bytes:"+Short.MAX_VALUE);
+		
+	}
+	
+
+}

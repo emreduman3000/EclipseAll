@@ -1,0 +1,14 @@
+package first;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("EMRE ");
+		System.out.println();
+		char c='!'; int cc='!';
+	
+		System.out.println(c+"\n"+cc);
+	}
+
+}

@@ -1,0 +1,57 @@
+package first;
+
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//INFOs
+		
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+	
+		int a=10;
+		if(a<20)
+			System.out.println("if-1");
+		System.out.println("out of if-1 ");
+		if(a<20)
+			System.out.println("if-2");
+		else
+			System.out.println("else(if-2)");
+		
+		if(a<11)
+			System.out.println("if-3");
+		else if(a<12)	
+			System.out.println("if else(");
+		else if(a<12)	
+				System.out.println("if else(");
+		else
+			System.out.println("else");	
+		
+		if(a>11)
+				System.out.println("if-3");
+			else if(a<12)	
+				System.out.println("if else(");
+			else if(a<12)	
+					System.out.println("if else(");
+			else
+				System.out.println("else");
+
+
+		
+		
+		
+	
+
+		
+		
+	
+	        
+    }
+
+}
+	
+
+

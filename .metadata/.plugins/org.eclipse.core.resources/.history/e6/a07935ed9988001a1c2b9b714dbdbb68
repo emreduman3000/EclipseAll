@@ -1,0 +1,31 @@
+package first;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args)
+	{
+	
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Please enter the number of students:");
+		int studentNum=scan.nextInt();
+		System.out.print("Please enter the number of questions:");
+		int questionNum=scan.nextInt();
+
+
+	}
+	
+	public static char answers()
+	{
+		int randomNum=(int)(65+(Math.random()*5));//65-66-67-68-69- A B C D E 
+		char randomAnswer=(char) randomNum;
+		return randomAnswer;	
+	}
+
+
+}
+	
+
+

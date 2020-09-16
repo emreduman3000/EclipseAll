@@ -1,0 +1,70 @@
+package first;
+
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//INFOS
+		/*
+		  DATA TYPES
+		  
+			  Unprimitive Data Types
+			  
+			  
+			  Primitive Data Types
+			  		
+				There are 8 primitive data types in Java:
+				
+					Data Type	Size	Description
+					byte	1 byte		Stores whole numbers from -128 to 127
+					short	2 bytes		Stores whole numbers from -32,768 to 32,767
+					int		4 bytes		Stores whole numbers from -2,147,483,648 to 2,147,483,647
+					long	8 bytes		Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+					float	4 bytes		Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+					double	8 bytes		Stores fractional numbers. Sufficient for storing 15 decimal digits
+					boolean	1 bit		Stores true or false values
+					char	2 bytes		Stores a single character/letter or ASCII values
+				
+				Numbers
+					Primitive number types are divided into two groups:
+					
+					Integer types stores  without decimals. Valid types are byte, short, int and long. 			
+					Floating point types represents numbers with a fractional part, containing one or more decimals. There are two types: float and double.
+						
+		 */
+
+		//day1
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+		
+		System.out.println("EMRE ");
+		System.out.println();
+		char c='!'; int cc='!';
+	
+		System.out.println(c+"\n"+cc);
+		
+		
+		
+		//day2
+		
+		//WRAPPER CLASSES AND THEIR METHODS 
+		System.out.println("Min:"+Integer.MIN_VALUE+"  Max:"+Integer.MAX_VALUE);
+		System.out.println("Size:"+Long.SIZE+"  Bytes:"+Long.BYTES);
+		byte b=5, b2=10;
+		System.out.println("Size:"+Byte.valueOf(b).+"  Bytes:"+Long.BYTES);
+		
+		short x=-3,y=4,z=8; 
+		System.out.println("valueOf:"+Short.valueOf(x)+ "  compare"+ Short.compare(x, y));
+	    System.out.println( Short.valueOf(z).compareTo(Short.valueOf(y)));//z short variable is greater (+4)
+		System.out.println("Size:"+Short.MIN_VALUE+"  Bytes:"+Short.MAX_VALUE);
+		
+		Scanner scan = new Scanner(System.in);//system class, in method , Scanner classýný import ettim
+		int s1=scan.nextInt(); double s2=scan.nextDouble();
+		System.out.println("int s1 + double s2 = "+s1+s2);
+	}
+	
+
+}

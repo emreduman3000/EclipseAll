@@ -1,0 +1,84 @@
+package first;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args)
+	{
+	
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Please enter the number of students:");
+		int studentNum=scan.nextInt();
+		System.out.print("Please enter the number of questions:");
+		int questionNum=scan.nextInt();
+		System.out.println(randomAnswers());
+		
+		int [][] allAnswers=new int [studentNum][questionNum];//student answers	
+		char [] answerKey= new char[questionNum];//answerkey
+		
+		createAnswerKey(answerKey);//randomAnswers()
+
+		put (allAnswers);
+		
+		compareStudent(answerKey,allAnswers);
+		
+		
+
+
+	}
+	
+	private static void compareStudent(char[] answerKey, int[][] allAnswers)
+	{
+		for(int line=0 ; line<allAnswers.length ; line++)
+		{
+			int correctAnswer=0;
+			for(int coloum=0 ; coloum<allAnswers[line].length ; coloum++)
+			{
+				if(allAnswers[line][coloum] == answerKey[coloum])
+				{
+					correctAnswer++;
+				}
+			}
+			System.out.printf("The Number of %d.Student's correct answers:%n",correctAnswer);
+		}
+	}
+
+	public static char randomAnswers()//create random answers
+	{
+		int randomNum=(int)(65+(Math.random()*5));//65-66-67-68-69- A B C D E 
+		char randomAnswer=(char) randomNum;
+		return randomAnswer;	
+	}
+
+	private static void createAnswerKey(char [] array)//put random answers in a array
+	{
+		for(int i=0 ; i < array.length ; i++)
+		{
+			array[i]=randomAnswers();
+		}
+	}
+
+
+/*
+ * puts random answers of students
+ */
+	private static void put(int [][] array)
+	{
+		for(int line=0 ; line<array.length ; line++)
+		{
+			for(int coloum=0 ; coloum<array[line].length ; coloum++)
+			{
+				array[line][coloum]=randomAnswers();
+			}
+
+		}
+	}
+
+
+
+}
+	
+
+

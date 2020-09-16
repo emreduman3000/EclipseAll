@@ -1,0 +1,212 @@
+package first;
+
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//INFOS
+		/*
+		  DATA TYPES			  
+			  
+			  1-PRIMITIVE DATA TYPES
+			  		
+				1a.)There are 8 primitive data types in Java:
+				
+					Data Type	Size		Description
+					byte		1 byte		Stores whole numbers from -128 to 127
+					short		2 bytes		Stores whole numbers from -32,768 to 32,767
+					int			4 bytes		Stores whole numbers from -2,147,483,648 to 2,147,483,647
+					long		8 bytes		Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+					float		4 bytes		Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+					double		8 bytes		Stores fractional numbers. Sufficient for storing 15 decimal digits
+					boolean		1 bit		Stores true or false values
+					char		2 bytes		Stores a single character/letter or ASCII values
+				
+				1b.)Numbers
+				
+					Primitive number types are divided into 2 groups:
+					
+					* Integer types stores  without decimals. Valid types are byte, short, int and long. 			
+					* Floating point types represents numbers with a fractional part, containing one or more decimals. There are two types: float and double.
+						
+			2-NON-PRIMITIVE DATA TYPES
+			
+				Non-primitive data types are called reference types because they refer to objects.
+				
+				The main difference between primitive and non-primitive data types are:
+				
+				* Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer 
+				  and is not defined by Java (except for String).
+				  
+				* Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
+				
+				* A primitive type has always a value, while non-primitive types can be null.
+				* A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
+				* The size of a primitive type depends on the data type, while non-primitive types have all the same size.
+				* Examples of non-primitive types are Strings, Arrays, Classes, Interface, etc. You will learn more about these in a later chapter.
+		 */
+
+		//day1
+		
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+		
+		System.out.println("");
+		System.out.println();
+		char c='!'; int cc='!';
+	
+		System.out.println(c+"\n"+cc);
+		
+		
+		
+		//day2
+		
+		//WRAPPER CLASSES AND THEIR METHODS 
+		int i=1,i2=2,i3=3;
+		System.out.println("Min:"+Integer.MIN_VALUE+"  Max:"+Integer.MAX_VALUE);
+		System.out.println("hashCode:"+Integer.hashCode((i+i2))+"bitCount:"+Integer.bitCount(123));
+		System.out.println("min:"+Integer.max(i, i2)+"max:"+Integer.min(i, i2));
+		System.out.println("Size:"+Long.SIZE+"  Bytes:"+Long.BYTES + "Type:"+ Long.TYPE);
+		System.out.println("Double NaN:"+Double.NaN+ " MAX_EXPONENT:"+Double.MAX_EXPONENT);
+		
+		short x=-3,y=4,z=8; 
+		System.out.println("valueOf:"+Short.valueOf(x)+ "  compare"+ Short.compare(x, y));
+	    System.out.println( Short.valueOf(z).compareTo(Short.valueOf(y)));//z short variable is greater (+4)
+		System.out.println("Size:"+Short.MIN_VALUE+"  Bytes:"+Short.MAX_VALUE);
+		
+		
+		//SCANNER CLASS
+		Scanner scann = new Scanner(System.in);//system class, in method , Scanner classýný import ettim
+		System.out.println("Please enter a two number:");
+		int s1=scann.nextInt();double s2=scann.nextInt(),s3=s1+s2;
+		System.out.println(s1 + s2);//3.0
+		System.out.println("int (s1 + s2) = " + (s1 + s2));//3.0
+		System.out.println("int s1 + s2 = " + s1 + s2);//12.0
+		
+		
+		
+		//day3
+		//NEXT NEXTLINE
+		//String'leri kullanicidan almak icin ya next() veya nextLine()
+        //kullaniriz. next() tek kelimelik String'ler icin kullanilir.
+        //Space gorunce String'i almayi birakir.
+        //nextLine() girilen tum String'i almak icin kullanilir
+		
+		Scanner s=new Scanner(System.in);
+		int listSize=s.nextInt();
+	    String nameList [] = {"MaviBere","BordoBere"};
+	    String S,Name;
+		for(int j=0;j<nameList.length;j++)
+		{
+			S=String.valueOf("name"+j+" ");
+			Name=(nameList[j]); 
+			
+			
+			System.out.println(S+Name);
+		}
+		Scanner scan = new Scanner(System.in);
+		
+
+		System.out.println("string giriniz:");
+		String test=scan.nextLine();	//1 2 3
+		System.out.println("test:"+test);
+		
+		System.out.println("string giriniz:");
+		String test2=scan.nextLine();//deger gireriz/ a b c girdim   test2=a b c
+		System.out.println("string giriniz:");
+		String name=scan.nextLine();// d e f  girdim	   name=d e f
+		String name1=scan.next();// 1 2 3 girdim 		   name1=1
+		String name2=scan.nextLine();//tekrardan girmedim/ name2= 2 3 oldu
+		String name22=scan.next();//4 5 6 girdim		   name22=4 yazdý	
+		System.out.println("test  "+test+"  test2"+test2+"   name:"+ name +"  name1:"+ name1 +"  name2:"+ name2 +"  name22:"+ name22 );
+		System.out.println("string giriniz:");
+		String name3=scan.next();//tekrardan girmedim 		name3=5 oldu
+		String name4=scan.next();//tekrardan girmedim 		name4=6 oldu
+		String name5=scan.nextLine();// k l m girdim		name5 boþ
+		String name6=scan.nextLine();//p r s girdim			name6=k l m oldu
+		String name7=scan.nextLine();//x y z girdim			name7=p r s oldu
+		String name8=scan.next();//tekrardan girmedim       name8=x oldu
+		System.out.println("   name3: " + name3 +
+				"   name4: "+name4+"  name5:"+name5+"  name6:"+name6+
+				"  name7:"+name7+"  name8:"+name8);
+
+		
+		//TYPE CASTING
+		 byte by1 = 101;
+	        int sayi1 = by1;//Kucuk data tipini buyuk data tipini cevirmek icin extra bir kod yazmaya 
+	                      //gerek yok Java bunu otomatik olarak yapar. (Auto Widening)
+	        
+	        System.out.println(sayi1);//101
+	        
+	        int sayi2 = 53;
+	        byte by2 = (byte)sayi2;//Buyuk data tipini kucuk data tipine cevirmek Java tarafindan yapilmaz.
+	                               //Ornekteki gibi sag tarafa donusturmek istedigimiz data tipini 
+	                               //parantez icinde yazmaliyiz.
+	        System.out.println(by2);//53
+	        
+	        double sayi3 = 23.9;
+	        int by3 = (int)sayi3;
+	        System.out.println(by3);//23
+	        
+	        float sayi4 = -23.9f;
+	        short by4 = (short)sayi4;
+	        System.out.println(by4);//-23 
+	        
+	        double sayi5 = 4.8;
+	        double sayi6 = 1.4;
+	        
+	        double sonuc1 = sayi5 / sayi6;
+	        System.out.println(sonuc1); // 3.428571428571429
+	        
+	        int sonuc2 = (int)(sayi5 / sayi6);
+	        System.out.println(sonuc2); //3
+	        
+	        int sayi7 = 5;
+	        int sayi8 = 3;
+	        
+	        int sonuc3 = sayi7 / sayi8;
+	        System.out.println(sonuc3);//Normalde 5/3=1.6666666... ama data type'i int yaparsaniz
+            // sadece tam kismi gorursunuz ==> 1
+	        
+	        double sonuc4 = sayi7 / sayi8;//1.0
+	        System.out.println("sonuc4:"+sonuc4);
+	      
+	        
+	        int sayi9 = 255;
+	        byte by5 = (byte)sayi9;
+	        System.out.println(by5);//Normalde byte'ta (-128 ...-1, 0, 1 ...127) 256 sayi var, 255 bir tane eksik
+	                                //bu yuzden -1 ekrana yazilir
+	                                //255 i 256 ya boler kalani yazar
+	        
+	        //Day04
+	        
+	        //Swap
+	        double say1=10;
+	        int say2=12;
+	        long l=0;
+	        System.out.println("say1:"+say1+"    say2:"+say2);
+
+	        l=(long)say1;//explicit narrowing type casting
+	        say1=say2;
+	        say2=(int)l;//explicit narrowing type casting
+	        System.out.println("say1:"+say1+"    say2:"+say2);
+	        
+	        //Swap again
+	        say1+=say2;
+	        say2=(int) (say1-say2);
+	        say1-=say2;
+
+	        System.out.println("say1:"+say1+"    say2:"+say2);
+
+	        
+	        
+	        
+    }
+
+}
+	
+
+

@@ -1,0 +1,53 @@
+package first;
+
+import java.util.Scanner;
+
+public class firstt {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//INFOs
+		
+		//syso or sout or sysout +CTRL+SPACE
+		//system class, out method,
+		
+		ekokBul(10,15);
+		ebobBul(10,21);
+	        
+    }
+
+	private static void ebobBul(int num1, int num2)	
+	{
+		// TODO Auto-generated method stub
+		int ebob=1;
+		int control=2;
+		while(control <= num1 && control <=num2)
+		{
+			if(num1%control==0 && num2%control==0)
+			{
+				ebob=control;					
+			}
+			control++;
+		}
+		if (ebob==1)
+			System.out.println("these both numbers are prime");
+		else
+			System.out.println("Ebob is:"+ebob);
+			
+	}
+
+	/*
+	 * return ekok
+	 */
+	private static void ekokBul(int num1, int num2) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+}
+	
+
+

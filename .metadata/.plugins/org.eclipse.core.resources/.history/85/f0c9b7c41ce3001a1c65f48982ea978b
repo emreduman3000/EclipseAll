@@ -1,0 +1,34 @@
+package techproedturkish01.techproedturkish01api;
+
+import static io.restassured.RestAssured.*;
+
+import org.junit.Test;
+
+import io.restassured.response.Response;
+
+
+
+public class GetRequest03 extends TestBase {
+	
+	
+	/*
+	 * When I send GET Request to URL
+	 http://dummy.restapiexample.com/api/v1/employees
+	 Then
+	  Status code is 200
+	  1)10'dan buyuk tum id’leri console’a yazdir
+	  10'dan buyuk 14 tane id oldugunu verify et
+	  2)30'dan kucuk tum yaslari console’a yazdir
+	  30 dan kucuk en buyuk yasin 23 oldugunu verify et
+	  3)Maasi 350000'den cok olan iscilerin isimlerini console’a yazdir
+	  Charde Marshall’in maasinin 350000'den buyuk oldugunu verify et
+	 */
+	
+	@Test
+	public void get01()
+	{
+		Response response = given().spec(spec02).when().get();
+		response.prettyPrint();
+	}
+
+}

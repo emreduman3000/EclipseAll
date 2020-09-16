@@ -1,0 +1,20 @@
+package AAA;
+
+public class Snippet {
+	/*
+	 * puts random answers of students
+	 */
+		private static void put(char[][] allAnswers)
+		{
+			for(int line=0 ; line<allAnswers.length ; line++)
+			{
+				for(int coloum=0 ; coloum<allAnswers[line].length ; coloum++)
+				{
+					allAnswers[line][coloum]=randomAnswers();
+				}
+	
+			}
+		}
+	
+}
+
